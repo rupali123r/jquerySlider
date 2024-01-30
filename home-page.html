@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new project</title>
+
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost&family=Lato&family=Roboto&family=Schoolbell&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Lato', sans-serif;
+        color: #4d5574;
+        background-color: #f2f2f6;
+    }
+
+    .owl-dots button.owl-dot {
+        width: 10px;
+        height: 10px;
+        background-color: rgba(255, 255, 255, 0.156) !important;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+    }
+
+    .owl-dots .owl-dot.active {
+        color: rgb(248, 248, 248) !important;
+    }
+
+    .top-header {
+        position: absolute;
+        top: 3%;
+        left: 0;
+        background-color: transparent;
+        z-index: 9;
+        border-bottom: 1px solid rgb(165, 161, 161);
+        width: 100%;
+        padding-bottom: 5px;
+    }
+
+    .demo-1 {
+        position: relative;
+   
+    }
+
+    .drop-btn {
+        color: #fff;
+        background-color: transparent;
+        border: none !important;
+        outline: none !important;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .drop-btn:hover {
+        color: red;
+    }
+
+    .top-main-left {
+        width: 100%;
+    }
+
+    .top-main-left a i {
+        padding-right: 10px;
+    }
+
+    .top-main-left a {
+        text-decoration: none;
+        color: #fff;
+        margin-left: 20px;
+        font-size: 14px;
+        font-family: 'Lato', sans-serif;
+    }
+
+    .top-main-left a:hover {
+        color: red;
+    }
+
+    .top-link {
+        display: inline;
+        list-style: none;
+        float: right;
+        margin-left: 10px;
+    }
+
+    .top-link a {
+        text-decoration: none;
+       
+        padding-left: 20px;
+        font-size: 13px;
+        line-height: 19px
+    }
+
+    .top-link a {
+        border-right: 1px solid rgb(209, 201, 201);
+        padding-right: 10px;
+        color: red !important;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .dropdown-menu {
+        border-top: 2px solid #ff3535;
+    }
+    .dropdown-menu li{
+        padding: 0;
+text-align: center;
+font-size: 12px;
+    }
+
+    .top-main-right {
+        width: 100%;
+        padding: 0;
+
+    }
+
+
+
+    .modal-title-1 {
+        text-align: center !important;
+    }
+
+    .model-btn {
+        width: 80%;
+        font-size: 14px;
+        height: 45px;
+        line-height: 43px;
+        border: none;
+        background-color: #ff3535;
+        color: #ffff;
+        padding: 0 30px;
+        border-radius: 30px;
+        text-transform: uppercase;
+        transition: all .3s ease;
+        text-align: center;
+        display: inline-block;
+        outline: none !important;
+        font-family: 'Quicksand', sans-serif;
+        margin-bottom: 20px;
+
+    }
+
+    .model-input {
+        height: 50px;
+        line-height: 48px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #e6eaf0;
+        padding: 0 20px;
+        border-radius: 30px;
+        font-family: 'Jost', sans-serif;
+        margin-bottom: 20px;
+        display: block;
+        text-align: left;
+        background-color: #f3f3f9;
+        margin-top: 25px;
+    }
+
+    .modal-backdrop {
+        position: static !important;
+        top: 0;
+        left: 0;
+    }
+
+    .model-input input {
+        border: none;
+        outline: none;
+        background-color: #f3f3f9;
+    }
+
+    .model-input i {
+        color: #aeaeb1;
+    }
+
+    .logo img {
+        width: 90px;
+    }
+
+    .nav-icon li {
+        list-style: none;
+        display: inline;
+    }
+
+    .nav-search {
+        font-size: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        width: 40px !important;
+        height: 40px !important;
+        line-height: 40px;
+        text-align: center;
+
+        display: inline-block;
+        color: #2d2a6e;
+
+        padding: 12px 5px 10px 5px;
+    }
+
+    .nav-bar{
+        margin: 0 !important;
+        padding: 0;
+    }
+
+    .nav-user {
+
+        cursor: pointer;
+        width: 40px !important;
+        height: 40px !important;
+        line-height: 40px;
+        text-align: center;
+        font-size: 20px;
+        display: inline-block;
+        color: #2d2a6e;
+
+        padding: 8px 5px 13px 5px;
+    }
+
+    .nav-heart {
+        font-size: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        width: 40px !important;
+        height: 40px !important;
+        line-height: 40px;
+        text-align: center;
+
+        display: inline-block;
+        color: #2d2a6e;
+
+        padding: 12px 5px 10px 5px;
+    }
+
+    .nav-bag {
+
+        cursor: pointer;
+        width: 40px !important;
+        height: 40px !important;
+        line-height: 40px;
+        text-align: center;
+
+        display: inline-block;
+        color: #fff;
+
+        padding: 8px 5px 13px 5px;
+    }
+
+    .nav-bag span {
+        padding: 4px 8px;
+        border-radius: 50%;
+        border: 1px solid rgba(251, 251, 251, 0.524);
+        margin-left: 5px;
+        font-size: 20px;
+        color: #ffff;
+    }
+
+    .nav-list img,
+    .nav-user img {
+        filter: invert(100%);
+    }
+
+    .hambuger-manu {
+        display: none;
+    }
+
+    .nav-bar {
+        margin-left: 6rem;
+    }
+
+    .nav-list {
+        list-style: none;
+        display: inline;
+        font-weight: 500;
+        line-height: 23px;
+        font-family: 'Jost', sans-serif !important;
+        color: #fff;
+        padding-left: 10px;
+    }
+
+
+    .nav-list a {
+        color: #fff !important;
+    }
+
+    .nav-icon li:hover{
+        color: #ff3535;
+    }
+    .nav-icon li i:hover,
+    .nav-icon li span:hover{
+        color: #ff3535;
+    }
+
+    .down-arrow-img {
+        width: 10px;
+    }
+
+    .nav-icon {
+        float: right;
+        color: #ffff;
+    }
+
+    .nav-icon i {
+        color: #fff;
+    }
+
+
+
+    .nav-list a {
+        text-decoration: none;
+        transition-delay: 0.8s;
+        font-size: 18px;
+        padding-left: 10px;
+    }
+
+    .nav-list.active a {}
+
+    .nav-list a:hover {
+        text-decoration: underline;
+        transition-delay: 0.8s;
+    }
+
+    .top-store:hover {
+        color: rgb(39, 190, 39);
+    }
+
+    #navbar {
+        display: none;
+    }
+
+    .most-navbar {
+        position: absolute;
+        top: 12%;
+        left: 0;
+        height: 40px;
+        z-index: 9;
+        background-color: transparent;
+        color: #fff;
+       
+    }
+
+
+    .item-content {
+        position: absolute;
+        top: 32%;
+        left: 25%;
+        text-align: center;
+    }
+
+    .item-content h4 {
+        font-size: 14px;
+        padding-top: 20px;
+        
+        text-transform: uppercase;
+      
+        color: #ffff;
+        font-weight: 400;
+        letter-spacing: 3px;
+    }
+
+    .item-content h3 {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 30px;
+        font-weight: 400;
+    
+       
+        color: #ffff;
+       
+    }
+
+    .nav-cart{
+        display: none !important;
+    }
+
+    .item-content p {
+
+        font-weight: 500;
+  
+
+        color: #ffff;
+        font-size: 16px;
+      
+        margin-bottom: 30px;
+    }
+
+    .owl-carousel img{
+        height: auto;
+    }
+
+.slide-btn{
+    width: 110px;
+    background-color: black;
+    color: #fff;
+font-size: 13px;
+border: none;
+outline: none;
+padding: 5px 0;
+text-transform: uppercase;
+}
+
+.slide-btn:hover{
+background-color: #fff;
+color: #000;
+}
+
+    @media(max-width: 768px) {
+
+        .top-header{
+            display: none;
+        }
+        .top-main-right {
+            display: none;
+            text-align: center;
+        }
+
+        .item-content {
+            top: 3%;
+        }
+
+        .nav-cart i{
+            font-size: 25px;
+        }
+
+       .item-content{
+        top: 32%;
+       }
+        .logo {
+            text-align: center;
+        }
+
+.nav-bag{
+    display: none !important;
+}
+.nav-search{
+    display: none !important;
+}
+
+        .item-content h4 {
+            margin-bottom: 10px;
+        }
+
+        .item-content h3 {
+            font-size: 35px;
+            line-height: 40px;
+            margin-bottom: 15px;
+        }
+
+        .item-content P {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .nav-user {
+            display: none !important;
+        }
+
+        .nav-heart {
+            display: none !important;
+        }
+
+        .nav-hide {
+            display: none !important;
+        }
+
+        .hambuger-manu {
+            display: block;
+        }
+
+        #navbar {
+            flex-direction: column;
+            background-color: #fff;
+            position: fixed;
+            top: 0%;
+            
+            width: 300px;
+            left: -300px;
+            justify-content: flex-start;
+            align-items: flex-start;
+            transition: 0.5s all;
+            padding: 60px 0 0 10px;
+            z-index: 9;
+            display: block;
+        }
+
+        #navbar li a {
+            margin-bottom: 1rem;
+            color: #000;
+            padding: 10px;
+            display: block;
+            font-size: 16px;
+            border-bottom-width: 1px;
+            border-bottom-style: dotted;
+            border-color: #e6eaf03b;
+            text-align: initial;
+            text-decoration: none;
+        }
+
+
+
+       
+        #close {
+            position: absolute;
+            top: 0px;
+            left: 0%;
+            color: rgb(252, 251, 251);
+            font-size: 14px;
+            width: 100%;
+            background-color: #ff3535;
+            text-align: center;
+            padding: 10px;
+            font-weight: 600;
+            z-index: 1;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        #hamburger {
+            display: block;
+        }
+
+       
+
+        #navbar.active {
+            right: 0px;
+        }
+
+        .tab-box {
+            margin-left: 22px;
+            margin-bottom: 20px;
+         
+        }
+        .most-navbar {
+    position: absolute;
+    top: 3%;
+        }
+        .side-bar-tab.active {
+            background-color: rgba(193, 192, 192, 0.694);
+           
+            color: #ff3535;
+          
+        }
+
+        .side-bar-tab:hover {
+            background-color: rgba(193, 192, 192, 0.694);
+            color:#ff3535;
+        }
+
+        .side-bar-tab {
+            font-family: 'Quicksand', sans-serif;
+            background: #fff;
+            color: #2d2a6e;
+            font-size: 13px;
+            border: none;
+            outline: none;
+            padding: 8px 9px;
+            display: inline;
+            margin: 0 !important;
+        }
+    }
+
+    @media (max-width: 500px){
+        .logo{
+            text-align: center;
+            margin-left: 20%;
+        }
+
+        .owl-carousel img{
+            height: 50vh !important;
+        }
+
+        .item-content {
+        position: absolute;
+        top: 32%;
+        left: 25%;
+        text-align: center;
+    }
+
+    .item-content h4 {
+        font-size: 14px;
+        padding-top: 20px;
+         text-transform: uppercase;  
+        color: #ffff;
+        font-weight: 400;
+        letter-spacing: 3px;
+        margin: 0;
+    }
+
+    .item-content h3 {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 25px;
+        font-weight: 400;
+        color: #ffff;
+        margin: 0;
+    }
+
+    .nav-cart{
+        display: none;
+    }
+
+    .item-content p {
+        font-weight: 500;
+    color: #ffff;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+
+    }
+</style>
+</head>
+
+<body>
+
+    <div class="container-fluid p-0">
+
+        <div class="demo-1 owl-carousel owl-theme">
+            <div class="item"> <img src="picture/slider1-1.png" />
+                <div class="item-content  ">
+                    <h4>Colorful adventure</h4>
+                    <h3>Comrade Backpack </h3>
+                    <p>Our classic is a fabulous all-rounder</p>
+                    <button class="slide-btn">SHOP NOW</button>
+                </div>
+            </div>
+
+            <div class="item"> <img src="picture/slider1-2 (1).png" />
+                <div class="item-content  ">
+                    <h4>Colorful adventure</h4>
+                    <h3>Spring Sale </h3>
+                    <p>Our classic is a fabulous all-rounder</p>
+                    <button class="slide-btn">SHOP NOW</button>
+                </div>
+            </div>
+
+
+            <div class="item"> <img src="picture/slider1-3.png" />
+                <div class="item-content  ">
+                    <h4>Colorful adventure</h4>
+                    <h3> New Arrivals</h3>
+                    <p>Our classic is a fabulous all-rounder</p>
+                    <button class="slide-btn">SHOP NOW</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="container-fluid bg-color">
+        <div class="container">
+            <div class="row pt-2">
+
+                <div class="top-header">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6">
+                            <div class="top-main-left">
+
+                                <a href=""><i class="fa fa-phone"></i> +1-202-555-0184</a>
+                                <a href=""><i class="fa fa-envelope-o"></i>sayhello@punio.com</a>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <ul class="top-main-right ">
+
+
+                                <li class="top-link ">
+
+                                  
+                                    <div class="btn-group float-end">
+                                        <span class="btn btn-sm drop-btn" type="button">
+                                            EN -1
+                                        </span>
+                                        <button type="button" class="btn btn-sm  dropdown-toggle dropdown-toggle-split"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span class="visually-hidden">Toggle Dropdown</span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li>AR - </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="btn-group float-end ">
+                                        <span class="btn drop-btn btn-sm dropdown-toggle" type="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false"
+                                            style="border-right: 1px solid rgb(226, 213, 213);">
+                                            USD
+                                        </span>
+                                        <ul class="dropdown-menu">
+                                            <li>EUR-Euro</li>
+                                        </ul>
+                                    </div>
+
+
+
+                                </li>
+
+                                <li class="top-link">
+                                    <a href="" class="top-store">Contact</a>
+                                </li>
+                                <li class="top-link">
+                                    <a href="" class="top-store">FAQs</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid most-navbar">
+        <div class="container">
+            <div class="row">
+
+                <ul id="navbar">
+                    <div id="close"><strong>CLOSE</strong> <i class="fa fa-close "></i></div>
+                    <div class="tab-box">
+                        <button class="side-bar-tab active">MENU</button>
+                        <button class="side-bar-tab">ACCOUNT</button>
+                        <button class="side-bar-tab">SETTINGS</button>
+                    </div>
+
+                    <li class="nav-list1"><a href="">Shop <img src="project-img/chevron-down.svg" class="down-arrow-img"
+                                alt=""> </a></li>
+
+                    <li class="nav-list1"><a href="">Vegetables <img src="project-img/chevron-down.svg"
+                                class="down-arrow-img" alt=""> </a></li>
+                    <li class="nav-list1"><a href="">Fresh Fruits<img src="project-img/chevron-down.svg"
+                                class="down-arrow-img" alt=""> </a></li>
+                    <li class="nav-list1"><a href="">Fruit Drink</a></li>
+                    <li class="nav-list1"><a href="">Fresh Bakery</a></li>
+                    <li class="nav-list1 active"><a href=""> <img src="project-img/chevron-down.svg"
+                                class="down-arrow-img" alt=""> Fresh Milk</a></li>
+                    <li class="nav-list1 active"><a href="">Sea Foods <img src="project-img/chevron-down.svg"
+                                class="down-arrow-img" alt=""> </a></li>
+                    <li class="nav-list1 active"><a href="">Cras Ultrices <img src="project-img/chevron-down.svg"
+                                class="down-arrow-img" alt=""> </a></li>
+                    <li class="nav-list1 active"><a href="">LoveSeats<img src="project-img/chevron-down.svg"
+                                class="down-arrow-img" alt=""> </a></li>
+                    <li class="nav-list1 active"><a href="">Pages <img src="project-img/chevron-down.svg"
+                                class="down-arrow-img" alt=""> </a></li>
+                    <li class="nav-list1 active"><a href="">Blog<img src="project-img/chevron-down.svg"
+                                class="down-arrow-img" alt=""> </a></li>
+                    <li class="nav-list1 active"><a href="">About Us<img src="project-img/chevron-down.svg"
+                                class="down-arrow-img" alt=""> </a></li>
+                    <li class="nav-list1 active"><a href="">Contact Us <img src="project-img/chevron-down.svg"
+                                class="down-arrow-img" alt=""> </a></li>
+                </ul>
+                <div class="col-md-4 col-2 hambuger-manu">
+                    <div id="ham">
+                        <i class="fa fa-bars" id="hamburger"></i>
+
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-md-4 col-lg-2 col-6 p-0">
+                    <div class="logo">
+                        <img src="picture/logo_5.png" alt="">
+                    </div>
+                </div>
+
+                <div class="col-lg-7 nav-hide">
+                    <ul class="nav-bar">
+
+                        <li class="nav-list active"><a href="">Home <img src="picture/chevron-down.svg"
+                                    class="down-arrow-img" alt=""> </a></li>
+                        <li class="nav-list"><a href="">Shop <img src="picture/chevron-down.svg" class="down-arrow-img"
+                                    alt=""> </a></li>
+                        <li class="nav-list"><a href="">Product <img src="picture/chevron-down.svg"
+                                    class="down-arrow-img" alt=""> </a></li>
+                        <li class="nav-list"><a href="">Blogs <img src="picture/chevron-down.svg" class="down-arrow-img"
+                                    alt=""> </a></li>
+                        <li class="nav-list"><a href="">Pages <img src="picture/chevron-down.svg" class="down-arrow-img"
+                                    alt=""></a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-md-4 col-4 col-lg-3">
+                    <ul class="nav-icon">
+                        <li class="nav-search"><i class="fa fa-search"></i></li>
+                        <li class=" nav-user" data-bs-toggle="modal" data-bs-target="#exampleModal"><img
+                                src="picture/person.svg" alt="" style="width: 22px; margin-bottom: 5px;">
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h1 style="text-align: center; font-size: 18px;">Sing in</h1>
+
+                                            <form action="" class="model-form">
+                                                <span class="model-input"><i class="fa fa-envelope-o"></i> <input
+                                                        type="email" placeholder="Email"></span>
+                                                <span class="model-input"><i class="fa fa-lock"></i> <input
+                                                        type="password" placeholder="password"></span>
+                                                <p style="text-align: center; font-size:14px;">Forgot Your Password?</p>
+                                                <button class="model-btn">SING IN</button>
+                                                <button class="model-btn">CREATE AN ACCOUNT</button>
+                                            </form>
+                                        </div>
+                                        <!-- <div class="modal-footer">
+							  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+							  <button type="button" class="btn btn-primary">Save changes</button>
+							</div> -->
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </li>
+                        <li class="nav-heart"><i class="fa fa-heart-o"></i></li>
+                        <li class="nav-bag">cart<span>0</span></li>
+                        <li class="nav-cart"><i class="fa fa-shopping-cart"></i></li>
+                    </ul>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+var a = document.querySelector("#navbar");
+		var btn = document.querySelector(" #hamburger");
+
+
+		var colorChange = 0
+
+		btn.addEventListener("click", () => {
+			console.log("clicked")
+
+			if (colorChange == 0) {
+				a.style.left = "0px"
+
+				colorChange = 1
+			}
+
+			var cross = document.querySelector("#close").addEventListener("click", () => {
+				a.style.left = "-300px"
+				console.log("again clicked")
+				colorChange = 0
+			})
+
+		})
+
+
+
+
+
+
+        $(document).ready(function () {
+            $('.demo-1').owlCarousel({
+                items: 1,
+                loop: true,
+                dots: true,
+                nav: false,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 2000,
+                autoplayHoverPause: true
+            });
+        })
+    </script>
+
+</body>
+
+</html>
